@@ -67,7 +67,7 @@ if __name__ == '__main__':
         gnb = GaussianNB()
         y_pred = gnb.fit(X_train, y_train).predict(X_test)
         mis_labelled=(y_test != y_pred).sum()
-        print("accuracy: ",1-mis_labelled/len(X_test))
+        print("error rate: ",mis_labelled/len(X_test))
     
     name='zoo'
     print(f"Dataset: {name}")
