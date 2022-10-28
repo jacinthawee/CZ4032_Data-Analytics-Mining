@@ -1,6 +1,7 @@
 import csv
 from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import f1_score
 # Read dataset and convert into a list.
 # path: directory of *.data file.
 def read_data(path):
@@ -67,7 +68,8 @@ if __name__ == '__main__':
         gnb = GaussianNB()
         y_pred = gnb.fit(X_train, y_train).predict(X_test)
         mis_labelled=(y_test != y_pred).sum()
-        print("error rate: ",mis_labelled/len(X_test))
+        print("accuracy: ",1-mis_labelled/len(X_test))
+        print("f1: ",f1_score(y_test,y_pred,average='weighted'))
     
     name='zoo'
     print(f"Dataset: {name}")
@@ -85,8 +87,9 @@ if __name__ == '__main__':
         x.append(process)
         y.append(i[-1])
     #print(x)
-    X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=0)
+    X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.3,random_state=42)
     gnb = GaussianNB()
     y_pred = gnb.fit(X_train, y_train).predict(X_test)
     mis_labelled=(y_test != y_pred).sum()
-    print("error rate: ",mis_labelled/len(X_test))
+    print("accuracy: ",1-mis_labelled/len(X_test))
+    print("f1: ",f1_score(y_test,y_pred,average='weighted'))
