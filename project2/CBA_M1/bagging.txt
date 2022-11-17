@@ -1,0 +1,49 @@
+australian
+Bagging test without prune acc:  0.8357487922705314
+time:  279.1076250076294
+Bagging test with prune acc:  0.8454106280193237
+time:  1728.9800343513489
+
+german
+Bagging test without prune acc:  0.7033333333333334
+time:  351.1550657749176
+Bagging test with prune acc:  0.6966666666666667
+time:  1636.7951555252075
+
+iris
+Bagging test without prune acc:  1.0
+time:  0.9152641296386719
+Bagging test with prune acc:  1.0
+time:  0.3178415298461914
+
+tic-tac-toe
+Bagging test without prune acc:  0.7986111111111112
+time:  73.39578366279602
+Bagging test with prune acc:  0.6909722222222222
+time:  38.4819815158844
+
+monks
+Bagging test without prune acc:  1.0
+time:  73.03675580024719
+Bagging test with prune acc:  0.7307692307692307
+time:  40.91932702064514
+
+messidor_features
+Bagging test without prune acc:  0.6445086705202312
+time:  1522.26211476326
+Bagging test with prune acc:  0.6358381502890174
+time:  55.744372844696045
+
+seeds
+Bagging test without prune acc:  0.8095238095238095
+time:  71.17429041862488
+Bagging test with prune acc:  0.8412698412698413
+time:  30.27213168144226
+
+zoo
+Bagging test without prune acc:  0.8709677419354839
+time:  296.92174220085144
+Bagging test with prune acc:  0.7741935483870968
+time:  75.31669735908508
+
+

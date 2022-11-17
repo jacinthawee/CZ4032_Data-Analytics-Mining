@@ -1,0 +1,3 @@
+python bagging.py > bagging.txt (bagging on CBA-M1 for prune and without prune)
+python original_output.py > original_report.txt (CBA-M1 without prune)
+python original_output_prune.py > prune_report.txt (CBA-M1 with prune)

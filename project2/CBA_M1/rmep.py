@@ -130,18 +130,3 @@ def partition(block):
     walls.sort()                # sort boundaries descending
     return walls
 
-
-# just for test
-if __name__ == '__main__':
-    import random
-
-    test_data = []
-    for i in range(100):
-        test_data.append([random.random(), random.choice(range(0, 2))])
-        test_data.append([random.random() + 1, random.choice(range(2, 4))])
-        test_data.append([random.random() + 2, random.choice(range(4, 6))])
-        test_data.append([random.random() + 3, random.choice(range(6, 8))])
-
-    test_block = Block(test_data)
-    test_walls = partition(test_block)
-    print(test_walls)        # should be [1+e, 2+e, 3+e], where e is a number very close to 0

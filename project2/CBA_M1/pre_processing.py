@@ -1,18 +1,4 @@
-"""
-Description: Pre-process original data. Firstly, we process the missing values (donated as '?'), discarding this column
-    when missing ratio above 50%, or filling blanks when below. We "guess" missing values by simply filling the mode of
-    existing values in the same column. And then, for the numerical attribute, we discretizate it by recursive minimal
-    entropy partitioning (see rmep.py). For the categorical attribute, we just replace the label with a
-    positive integer. For more information, see [1].
-Input: a data table with several data case, many attributes and class label in the last column, a list of the name of
-    each attribute, and a list of the type of each column.
-Output: a data list without numerical values and "str" categorical values.
-Author: CBA Studio
-Reference:
-    1. http://cgi.csc.liv.ac.uk/~frans/KDD/Software/LUCS-KDD-DN/lucs-kdd_DN.html
-"""
 import rmep
-
 
 # Identify the mode of a list, both effective for numerical and categorical list. When there exists too many modes
 #   having the same frequency, return the first one.
@@ -78,7 +64,7 @@ def replace_numerical(data, column_no, walls):
 # column_no: identify which column to be processed
 def replace_categorical(data, column_no):
     size = len(data)
-    classes = set([x[column_no] for x in data])
+    classes = sorted(set([x[column_no] for x in data]))
     classes_no = dict([(label, 0) for label in classes])
     j = 1
     for i in classes:
